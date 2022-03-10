@@ -1,12 +1,18 @@
-.App {
+.app {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.table-container{
+  display: flex;
+  justify-content: center;
 }
-
+.weather-table{
+  border-collapse: collapse;
+  
+}
+.weather-table tr,td,th{
+  border: solid
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
