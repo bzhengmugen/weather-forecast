@@ -32,8 +32,6 @@ function App() {
     await getCityId(city).then(({data}: any) => {
       console.log(data[0].woeid)
       loadCityWeather(data[0].woeid)
-    }).catch(err =>{
-      console.log('Error reading data' + err)
     })
   } 
   //fetch city weather info by city id
@@ -45,8 +43,6 @@ function App() {
               // take the city name and the next day's weather info
               { name: data.title, data: data.consolidated_weather[0] },
             ]);
-    }).catch(err =>{
-      console.log('Error reading data' + err)
     })
   };
 
@@ -79,7 +75,7 @@ function App() {
                       src={`${IMG_SRC_BASE}${city.data.weather_state_abbr}.png`}
                     />
                   </td>
-                  <td> {city.data.the_temp} C</td>
+                  <td> {Math.round(city.data.the_temp * 100) /100} C</td>
                   <td> {Math.round(city.data.wind_speed * 100) / 100} mph</td>
                 </tr>
               );
